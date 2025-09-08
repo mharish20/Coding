@@ -2,7 +2,6 @@ class Node:
     def __init__(self,data):
         self.data=data
         self.next=None
-
 class LinkedList:
     def __init__(self):
         self.head=None
@@ -12,8 +11,7 @@ class LinkedList:
         new_node=Node(data)
         if not self.head:
             self.head=new_node
-            self.size+=1
-            return 
+            return
         current=self.head
         while current.next:
             current=current.next
@@ -25,14 +23,14 @@ class LinkedList:
         new_node.next=self.head
         self.head=new_node
         self.size+=1
-
+    
     def insert_at_position(self,index,data):
         if index<0:
-            print("Index must be greater than zero")
+            print("Index must be greater than 0")
             return
         if index==0:
             self.prepend(data)
-            return 
+            return
         if index>self.size:
             self.append(data)
             return
@@ -61,34 +59,37 @@ class LinkedList:
         while current:
             stack.append(current.data)
             current=current.next
-        print('None',end='-->')
+        print("None",end='-->')
         while stack:
             print(stack.pop(),end='-->')
         print()
-    
-    def odd_or_even(self):
-        flag=1
-        current=self.head
-        while current.next:
-            flag=not flag
-            current=current.next
-        print("Odd") if flag==1 else print("Even")
 
+    def odd_or_even(self):
+        flag=0
+        current=self.head
+        while current:
+            flag= not flag
+            current=current.next
+        print("Odd") if flag==1 else print("Even") 
+    
     def display(self):
         if not self.head:
-            print("The list is empty")
-            return 
+            print("The list is Empty.")
+            return
         print("Linked List:")
         current=self.head
         while current:
-            print(current.data,end='-->')
+            print(current.data,end="-->")
             current=current.next
-        print("None")
+        print()
 
 ll=LinkedList()
+ll.append(1)
+ll.append(2)
 ll.append(3)
-ll.display()
 ll.append(4)
 ll.append(5)
 ll.append(6)
 ll.display_reverse()
+ll.odd_or_even()
+ll.display()
