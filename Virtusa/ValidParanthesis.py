@@ -14,4 +14,3 @@ for ch in s:
             exit()
         stack.pop()
 print(not stack)
-    
