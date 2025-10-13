@@ -1,7 +1,12 @@
 inp = input("Enter a text:").lower()
 vowels = ['a','e','o','u','i']
-count = 0 
+vow = 0 
+cons = 0
 for i in inp:
     if i in vowels:
-        count += 1
-print(count)
+        vow += 1
+    elif i == " ":
+        pass
+    else:
+        cons += 1
+print(f"Vowels: {vow} and Consonants: {cons}")
